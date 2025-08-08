@@ -41,14 +41,6 @@ module biblioteca::biblioteca {
         biblioteca.libros.insert(identificador, libro)
     }
 
-    // * Obtener los datos de un libro en base a su ID
-    public fun obtener_libro(biblioteca: Biblioteca, identificador: u64): &Libro {
-        assert!(biblioteca.libros.contains(&identificador), ID_NO_EXISTE);
-
-        let libro = biblioteca.libros.get(&identificador);
-        return libro
-    }
-
     // * Actualiza el titulo de un libro en base a los datos proporcionados
     public fun actualizar_titulo(biblioteca: &mut Biblioteca, identificador: u64, titulo: String) {
         assert!(biblioteca.libros.contains(&identificador), ID_NO_EXISTE);
