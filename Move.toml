@@ -1,0 +1,8 @@
+[package]
+name = "biblioteca"
+edition = "2024.beta"
+
+[dependencies]
+
+[addresses]
+biblioteca = "0x0"
