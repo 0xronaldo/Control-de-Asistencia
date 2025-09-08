@@ -1,3 +1,10 @@
+// * By: Ronaldo Sanchez Mendoza
+// * Control de asistencia : para este proyecto lo construi en vscode ya que el code space tenia problema pero actualizando ciertos servicios si funciono
+// * Desarrolle un control basico pero suficiente control de asistencia en donde se registran el nombre , ID , fecha de un usuario con estos datos son suficientes para poder 
+// * construir un base de datos tambien la idea que tengo tambien es poder implementar aparte sui + tableland para un sistema ORM basico aun no se si funcione la logica de web2 a web3 
+// * pero es un avance
+
+
 module asistencia::control {
     use sui::vec_map::{Self, VecMap};
     use std::string::String;
