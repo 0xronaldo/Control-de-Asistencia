@@ -1,7 +1,8 @@
-# Biblioteca Sui
-Biblioteca es un módulo desarrollado en Move para la blockchain Sui, que permite gestionar una colección de libros de forma descentralizada.
 
-Con este contrato inteligente podrás crear bibliotecas, agregar, actualizar y eliminar libros, así como administrar su disponibilidad, todo con persistencia y verificación de datos en la red.
+# Control de Asistencia en Sui
+Control de Asistencia es un módulo desarrollado en Move con la blockchain Sui, que permite gestionar el registro de usuarios y su asistencia de forma descentralizada.
+
+Con este contrato inteligente podrás crear controles de asistencia, agregar, actualizar y eliminar personas, así como administrar su presencia y fecha de asistencia, todo con persistencia y verificación de datos en la red.
 
 ## Pasos para desplegar en testnet:
 1. Contar con tu entorno de Sui client configurando, puedes ver el tutorial en el repositorio de [first steps](https://github.com/Zona-Tres/sui-first-steps/tree/main/extras/sui_client).
@@ -23,105 +24,51 @@ sui client call --package ID-DEL-PAQUETE --module biblioteca --function NOMBRE-D
 ```
 
 
-## Funciones del módulo 
-1. `crear_biblioteca`
 
-**Descripción**: Crea una nueva biblioteca vacía y la transfiere al creador de la transacción.
 
----
-2. `agregar_libro`
+## Funciones del modulo
 
-**Descripción**: Agrega un nuevo libro a la biblioteca, validando que el ID no exista previamente.
+1. `crear_control`
 
-**Argumentos**:
-
-``biblioteca``: Referencia mutable a la biblioteca.
-
-``identificador``: ID único para el libro.
-
-``titulo``: Título del libro.
-
-``autor``: Autor del libro.
-
-`publicado`: Año de publicación.
-
-`disponible`: Estado de disponibilidad (true/false).
+**Descripción**: Crea un nuevo control de asistencia vacío y lo transfiere al creador de la transacción.
 
 ---
 
-3. `actualizar_titulo`
+2. `agregar_persona`
 
-**Descripción**: Cambia el título de un libro existente.
+**Descripción**: Agrega una nueva persona al control de asistencia, validando que el ID no exista previamente.
 
 **Argumentos**:
 
-`biblioteca`: Referencia mutable a la biblioteca.
-
-`identificador`: ID del libro a actualizar.
-
-`titulo`: Nuevo título del libro.
+- `control`: Referencia mutable al control de asistencia.
+- `identificador`: ID único para la persona.
+- `nombre`: Nombre de la persona.
+- `presente`: Estado de asistencia (true/false).
+- `fecha`: Fecha de la asistencia.
 
 ---
 
-4. **actualizar_autor**
+3. `actualizar_nombre`
 
-**Descripción**: Cambia el autor de un libro existente.
+**Descripción**: Cambia el nombre de una persona existente.
 
 **Argumentos**:
 
-`biblioteca`: Referencia mutable a la biblioteca.
-
-`identificador`: ID del libro a actualizar.
-
-`autor`: Nuevo autor del libro.
+- `control`: Referencia mutable al control de asistencia.
+- `identificador`: ID de la persona a actualizar.
+- `nombre`: Nuevo nombre de la persona.
 
 ---
 
-5. **actualizar_publicado**
+4. `actualizar_asistencia`
 
-**Descripción**: Actualiza el año de publicación de un libro.
+**Descripción**: Cambia el estado de asistencia de una persona.
 
 **Argumentos**:
 
-`biblioteca`: Referencia mutable a la biblioteca.
-
-`identificador`: ID del libro a actualizar.
-
-`publicado`: Nuevo año de publicación.
+- `control`: Referencia mutable al control de asistencia.
+- `identificador`: ID de la persona a actualizar.
+- `presente`: Nuevo estado de asistencia (true/false).
 
 ---
-
-6. `actualizar_disponibilidad`
-
-**Descripción**: Cambia si un libro está disponible o no.
-
-**Argumentos**:
-
-`biblioteca`: Referencia mutable a la biblioteca.
-
-`identificador`: ID del libro a actualizar.
-
-`disponible`: Nuevo estado de disponibilidad (true/false).
-
----
-
-7. `borrar_libro`
-
-**Descripción**: Elimina un libro de la biblioteca.
-
-**Argumentos**:
-
-`biblioteca`: Referencia mutable a la biblioteca.
-
-`identificador`: ID del libro a eliminar.
-
----
-
-8. `eliminar_biblioteca`
-
-**Descripción**: Elimina toda la biblioteca de la blockchain.
-
-**Argumentos**:
-
-`biblioteca`: Biblioteca a eliminar.
 
