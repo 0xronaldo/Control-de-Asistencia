@@ -51,3 +51,34 @@ Con este contrato inteligente podrás crear controles de asistencia, agregar, ac
 
 ---
 
+
+5. `actualizar_fecha`
+
+**Descripción**: Actualiza la fecha de asistencia de una persona.
+
+**Argumentos**:
+
+- `control`: Referencia mutable al control de asistencia.
+- `identificador`: ID de la persona a actualizar.
+- `fecha`: Nueva fecha de asistencia.
+
+---
+
+6. `borrar_persona`
+
+**Descripción**: Elimina una persona del control de asistencia.
+
+**Argumentos**:
+
+- `control`: Referencia mutable al control de asistencia.
+- `identificador`: ID de la persona a eliminar.
+
+---
+
+7. `eliminar_control`
+
+**Descripción**: Elimina todo el control de asistencia de la blockchain.
+
+**Argumentos**:
+
+- `control`: Control de asistencia a eliminar.

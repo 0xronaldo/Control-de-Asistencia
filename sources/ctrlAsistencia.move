@@ -73,4 +73,9 @@ module asistencia::control {
     }
 
     // * Elimina el control de asistencia completo
-    public
+    
+    public fun eliminar_control(control: ControlAsistencia) {
+        let ControlAsistencia { id, personas: _ } = control;
+        id.delete();
+    }
+}
