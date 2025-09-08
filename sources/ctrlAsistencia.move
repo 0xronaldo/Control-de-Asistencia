@@ -5,7 +5,7 @@
 // * pero es un avance
 
 
-module asistencia::control {
+module ctrlAsistencia::control {
     use sui::vec_map::{Self, VecMap};
     use std::string::String;
 
